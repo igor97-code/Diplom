@@ -30,6 +30,10 @@ module.exports = {
                 use:[miniCssExtractPlugin.loader,"css-loader"]
             },
             {
+                test:/\.scss$/,
+                use:[miniCssExtractPlugin.loader,"css-loader","sass-loader"]
+            },
+            {
                 test: /\.(wolf|wolf2|ttf|otf)$/,
                 use: [
                     {

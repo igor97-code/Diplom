@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
-import data from "../data/Data.js";
-console.log(data);
-let App = ()=>{
-    return(
-        <div>
+import Store from "../Store/Store.js";
+import Header from "./Header/Header.jsx"
 
-        </div>
-    );
+let App = ()=>{
+
+   return(
+       <Header/>
+   )
 }
 
 
