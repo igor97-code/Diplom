@@ -1,0 +1,38 @@
+header{
+  background-color: #FFFFFF;
+  padding:10px 0px;
+  .header-wrapper{
+    display: flex;
+    align-items: center;
+    .header-navigation {
+      display: flex;
+       &-item{
+         margin-left:60px;
+         color:$black;
+         text-transform: uppercase;
+         font-size:$menuSize;
+         &:after{
+           content: url(/dist/img/itemAfter.png);
+           padding:8px;
+         }
+       }
+    }
+    .login-wrapper{
+      display: flex;
+      margin-left:auto;
+      align-items: center;
+      .user{
+        display: flex;
+        align-items: center;
+        &-name{
+          margin-left:10px;
+        }
+      }
+      .login-basket > img{
+        width:40px;
+        height: 40px;
+        margin-left:10px;
+      }
+    }
+  }
+}

@@ -1,6 +1,7 @@
 const path = require('path');
 const htmlWebpackPlugin = require('html-webpack-plugin');
 const miniCssExtractPlugin = require('mini-css-extract-plugin');
+const copyWebpackPlugin = require("copy-webpack-plugin");
 
 module.exports = {
     entry: {
@@ -28,6 +29,10 @@ module.exports = {
             {
                 test: /\.css$/,
                 use:[miniCssExtractPlugin.loader,"css-loader"]
+            },
+            {
+                test:/\.scss$/,
+                use:["style-loader",miniCssExtractPlugin.loader,"css-loader","sass-loader"]
             },
             {
                 test: /\.(wolf|wolf2|ttf|otf)$/,
@@ -63,5 +68,12 @@ module.exports = {
             template: "./src/main.html"
         }),
         new miniCssExtractPlugin(),
+        new copyWebpackPlugin({
+                patterns: [
+                    {from: "./src/img", to: "img"}
+                ]
+            }
+        )
+
     ]
 }

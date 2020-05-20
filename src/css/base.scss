@@ -1,0 +1,21 @@
+@import "./variabels.scss   ";
+@import "./header/header.scss";
+@import "./Panel/Panel.scss";
+@import "./Content/Content.scss";
+
+
+body{
+    margin:0;
+    padding:0;
+    font-size:14px;
+}
+
+*{
+    box-sizing: border-box;
+}
+.container{
+    max-width:1300px;
+    width:100%;
+    margin: 0 auto;
+    padding: 0 40px;
+}

@@ -1,0 +1,30 @@
+nav{
+  background: rgba(52, 73, 94, 0.8);
+  .Panel-wrapper{
+    display: flex;
+    align-items: center;
+    .panel-filter{
+      display: flex;
+      &-item{
+        color:$white;
+        text-transform: uppercase;
+        font-size: $menuSize;
+        padding:7px 15px;
+        &:hover{
+          background-color: #34495E;
+        }
+      }
+    }
+    .panel-search{
+      margin-left:auto;
+      input{
+        width: 135px;
+        height: 27px;
+        background-image: url(/dist/img/search.svg);
+        background-repeat: no-repeat;
+        background-position: left;
+        padding-left:20px;
+      }
+    }
+  }
+}
