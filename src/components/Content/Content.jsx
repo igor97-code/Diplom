@@ -5,13 +5,16 @@ import Items from "./PanelItems.jsx";
 
 class Content extends React.Component{
     render(){
+        console.log(this.props);
         return(
-            <div className = "container">
                 <div className="Content">
-                    <Filters/>
-                    <Items/>
-                </div>
-            </div>
+                    <div className = "container">
+                        <div className ="content-wrapper">
+                            <Filters store = {this.props.store} dispatch ={this.props.dispatch}/>
+                            <Items store ={this.props.store}/>
+                        </div>
+                    </div>
+                 </div>
         )
     }
 }

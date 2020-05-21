@@ -4,6 +4,5 @@ import ReactDom from 'react-dom';
 import App from "./components/App.jsx";
 import Store from "./Store/Store.js";
 
-console.log(Store.getState());
-ReactDom.render(<App store = {Store.getState()}/>,document.getElementById("root"));
+ReactDom.render(<App store = {Store.getState()} dispatch = {Store.dispatch}/>,document.getElementById("root"));
 

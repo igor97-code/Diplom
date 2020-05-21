@@ -1,16 +1,47 @@
  import React from 'react';
 
 
+let Filters = (props) =>{
+    let initialfilter = (e)=>{
 
-class Filters extends React.Component{
-
-    render(){
-        return(
-            <div className="Filter">
-                filters
-            </div>
-        )
+        console.log(e.currentTarget);
+        props.dispatch({
+            type:'checkfilter',
+            id : e.currentTarget.id
+        });
     }
-}
+    let section = (ar)=> {
+        let copar = ar.map((item) => {
+            return <div className="section" key={item.id} id={item.id} onClick={initialfilter}>
+                <div className="section-checked"></div>
+                <div className="section-title">{item.tytle}</div>
+            </div>
+        })
+        console.log(copar);
+        return copar;
+    }
+
+    return(
+        <div className="Filter">
+            <div className="Filt-block">
+                <div className="filt-title">
+                    {props.store.filter[0].tytle}
+                </div>
+                <div className="filt-section">
+                    {section(props.store.filter[0].items)}
+                </div>
+            </div>
+            <div className="Filt-block">
+                <div className="filt-title">
+                    {props.store.filter[1].tytle}
+                </div>
+                <div className="filt-section">
+                    {section(props.store.filter[1].items)}
+                </div>
+            </div>
+        </div>
+    )
+ }
+
 
 export default Filters;
