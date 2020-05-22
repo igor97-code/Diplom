@@ -1,10 +1,12 @@
 import {createStore, combineReducers} from "redux";
 import CardReducer from "./Reducers/cardReducer";
 import FilterReducer from './Reducers/FilterReducer'
+import FiltratingReducer from './Reducers/filtrationReducer';
 
     let reducers = combineReducers({
         items:CardReducer,
-        filter:FilterReducer
+        filter:FilterReducer,
+        arfilter: FiltratingReducer
     });
     let store = createStore(reducers);
     /*function letData(){

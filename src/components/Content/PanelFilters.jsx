@@ -4,20 +4,20 @@
 let Filters = (props) =>{
     let initialfilter = (e)=>{
 
-        console.log(e.currentTarget);
         props.dispatch({
             type:'checkfilter',
-            id : e.currentTarget.id
+            id : e.currentTarget.id,
+            key: e.currentTarget.getAttribute('datakey'),
+            value: e.currentTarget.getAttribute('value')
         });
     }
     let section = (ar)=> {
         let copar = ar.map((item) => {
-            return <div className="section" key={item.id} id={item.id} onClick={initialfilter}>
-                <div className="section-checked"></div>
+            return <div className="section" key={item.id} id={item.id} datakey = {item.key} value ={item.tytle} onClick={initialfilter}>
+                <div className={`section-checked ${item.check? 'check': ''}`}></div>
                 <div className="section-title">{item.tytle}</div>
             </div>
         })
-        console.log(copar);
         return copar;
     }
 
