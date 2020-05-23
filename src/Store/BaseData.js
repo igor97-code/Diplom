@@ -1,9 +1,14 @@
 
 let newdata = [];
 let image = ['7914','7915','7916','12949','12950','12951','613','15060','15061','15056','15057'];
-
+let brand = ['FXR','BCA','509','FXR','BCA','509','FXR','BCA','509','FXR','BCA'];
+let cat = ['Куртки','Ботинки','Штаны','Куртки','Ботинки','Штаны','Куртки','Ботинки','Штаны','Куртки','Ботинки']
+let dc = ['odegda','optic','sumruk','shlem'];
 for(let i = 0; i < 30; i++){
     let rand = Math.floor(0 + (10 - 1) * Math.random());
+    let rand1 = Math.floor(0 + (10 - 1) * Math.random());
+    let rand2 = Math.floor(0 + (10 - 1) * Math.random());
+    let rand3 = Math.floor(0 + (3 - 1) * Math.random());
     newdata.push({
         L: "1",
         action_id:"0",
@@ -16,8 +21,8 @@ for(let i = 0; i < 30; i++){
         arrive_qty:"1",
         articul:"210021-0510-13",
         black :"1",
-        brand:"FXR",
-        cat:"Куртки",
+        brand:brand[rand],
+        cat:cat[rand1],
         catid:"43",
         child :"0",
         colors:
@@ -31,12 +36,12 @@ for(let i = 0; i < 30; i++){
         free_qty: "0",
         gender: "муж",
         grey: "1",
-        images: image[rand],
+        images: image[rand2],
         is_new: "1",
         itemcount: 5,
         male: "1",
         objectX_id: "48",
-        object_id: "78647",
+        object_id: `${i == 0 ?'78000' : '78647'}`,
         odegda: "1",
         options:
             {

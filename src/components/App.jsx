@@ -7,7 +7,7 @@ let App = (props)=>{
    return(
        <div>
          <Header/>
-         <Panel/>
+         <Panel dispatch = {props.dispatch}/>
          <Content store = {props.store} dispatch = {props.dispatch}/>
        </div>
    )

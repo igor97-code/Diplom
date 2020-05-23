@@ -11,9 +11,21 @@
   width:calc(100% - 250px);
   display: flex;
   flex-wrap:wrap;
+  align-content: flex-start;
+  min-height: 93vh;
+  &::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+  }
+  &{
+    -ms-overflow-style: none; /* IE 10+ */
+    scrollbar-width: none; /* Firefox */
+  }
 }
+
 .item{
   padding:15px;
+  position: relative;
   width:250px;
   background-color: $white;
   border: 1px solid rgba(52, 73, 94, 0.15);
@@ -23,6 +35,14 @@
       max-width:100%;
       margin:0 auto;
     }
+  }
+  .show-info{
+    position: absolute;
+    z-index: 1;
+    border:1px solid grey;
+    display: flex;
+    width: 800px;
+    background-color: $white;
   }
   .title-name{
     color:$black;

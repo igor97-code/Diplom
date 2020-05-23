@@ -5,7 +5,7 @@ import Item from './item.jsx';
 
 class Items extends React.Component{
     render(){
-        let itemarray = this.props.store.items.map((item)=> <Item item = {item}/>);
+        let itemarray = this.props.items.map((item)=> <Item item = {item} dispatch ={this.props.dispatch}/>);
         return(
             <div className="item-wrapper">{itemarray}</div>
         )

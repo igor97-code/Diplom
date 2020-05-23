@@ -1,15 +1,31 @@
 import React from 'react';
-
+import FullCard from './ShowFoollcard.jsx'
 
 
 
 
 class Item extends React.Component{
+    constructor(props) {
+        super(props);
+        this.openinfo = this.openinfo.bind(this.props.dispatch);
+    }
+    openinfo(e){
+        this({
+            type:'openitem',
+            id:e.currentTarget.getAttribute('objectId')
+        });
+    }
+    replaceImage(img){
+        let image = img.split(';');
+        return image[0];
+    }
     render(){
+
         return (
-            <div className = "item">
+            <div className = "item" objectId = {this.props.item.object_id} onClick = {this.openinfo}>
+                {this.props.item.check && <FullCard item = {this.props.item}/>}
                 <div className = "image">
-                    <img src={`http://b2b.topsports.ru/c/productpage/${this.props.item.images}.jpg`} alt=""/>
+                    <img src={`http://b2b.topsports.ru/c/productpage/${this.replaceImage(this.props.item.images)}.jpg`} alt=""/>
                 </div>
                 <div className ="item-info">
                     <div className="title-name">
