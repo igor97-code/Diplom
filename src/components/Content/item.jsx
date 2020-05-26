@@ -10,6 +10,8 @@ class Item extends React.Component{
         this.openinfo = this.openinfo.bind(this.props.dispatch);
     }
     openinfo(e){
+        if(e.target.classList.contains('basket-button') || e.target.classList.contains('CloseItem')) return;
+        console.log(123123123);
         this({
             type:'openitem',
             id:e.currentTarget.getAttribute('objectId')
@@ -23,7 +25,7 @@ class Item extends React.Component{
 
         return (
             <div className = "item" objectId = {this.props.item.object_id} onClick = {this.openinfo}>
-                {this.props.item.check && <FullCard item = {this.props.item}/>}
+                {this.props.item.check && <FullCard item = {this.props.item} dispatch = {this.props.dispatch}/>}
                 <div className = "image">
                     <img src={`http://b2b.topsports.ru/c/productpage/${this.replaceImage(this.props.item.images)}.jpg`} alt=""/>
                 </div>

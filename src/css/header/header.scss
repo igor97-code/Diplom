@@ -28,10 +28,34 @@ header{
           margin-left:10px;
         }
       }
-      .login-basket > img{
-        width:40px;
-        height: 40px;
-        margin-left:10px;
+      .login-basket{
+        position: relative;
+        & > img{
+          width:40px;
+          height: 40px;
+          margin-left:10px;
+        }
+      }
+    }
+  }
+  .basket-items{
+    width: 500px;
+    position: absolute;
+    background-color: #f2f2f2;
+    right: 0px;
+    z-index: 1;
+    color:$black;
+    font-size:18px;
+    padding:5px 10px;
+    .basket-item{
+      display: flex;
+      margin-top:8px;
+    }
+    .basket-item-img{
+      width:100px;
+      height:100px;
+      & >img{
+        max-width: 100%;
       }
     }
   }

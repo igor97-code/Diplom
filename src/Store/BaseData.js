@@ -9,6 +9,7 @@ for(let i = 0; i < 30; i++){
     let rand1 = Math.floor(0 + (10 - 1) * Math.random());
     let rand2 = Math.floor(0 + (10 - 1) * Math.random());
     let rand3 = Math.floor(0 + (3 - 1) * Math.random());
+    let randId = Math.floor(0 + (1000 - 1) * Math.random());
     newdata.push({
         L: "1",
         action_id:"0",
@@ -41,7 +42,7 @@ for(let i = 0; i < 30; i++){
         itemcount: 5,
         male: "1",
         objectX_id: "48",
-        object_id: `${i == 0 ?'78000' : '78647'}`,
+        object_id: randId,
         odegda: "1",
         options:
             {

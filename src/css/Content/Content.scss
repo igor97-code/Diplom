@@ -40,9 +40,47 @@
     position: absolute;
     z-index: 1;
     border:1px solid grey;
-    display: flex;
     width: 800px;
     background-color: $white;
+    .tytle{
+      font-weight:bold;
+      font-size:18px;
+    }
+    .show-info-exit{
+      background: #aea8a8;
+      display: flex;
+      justify-content: flex-end;
+      padding: 5px;
+    }
+    .show-info-wrapper{
+      display: flex;
+    }
+    .show-info-added{
+      flex-grow: 1;
+    }
+    .option{
+      display: flex;
+      justify-content: space-between;
+      font-size: 20px;
+    }
+    .show-info-price{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .price{
+        color:$black;
+        font-size: 24px;
+        font-weight: bold;
+      }
+    }
+    .basket > button{
+      outline: none;
+      padding: 10px 17px;
+      background-color: #F05A28;
+      font-size: 18px;
+      border: 1px solid #F05A28;
+      color: white;
+    }
   }
   .title-name{
     color:$black;

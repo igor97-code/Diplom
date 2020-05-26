@@ -6,7 +6,7 @@ import Content from "./Content/Content.jsx"
 let App = (props)=>{
    return(
        <div>
-         <Header/>
+         <Header basket = {props.store.basket} dispatch = {props.dispatch} items ={props.store.items} />
          <Panel dispatch = {props.dispatch}/>
          <Content store = {props.store} dispatch = {props.dispatch}/>
        </div>

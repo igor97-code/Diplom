@@ -1,3 +1,4 @@
+@charset "UTF-8";
 header {
   background-color: #FFFFFF;
   padding: 10px 0px; }
@@ -23,10 +24,18 @@ header {
         align-items: center; }
         header .header-wrapper .login-wrapper .user-name {
           margin-left: 10px; }
-      header .header-wrapper .login-wrapper .login-basket > img {
-        width: 40px;
-        height: 40px;
-        margin-left: 10px; }
+      header .header-wrapper .login-wrapper .login-basket {
+        position: relative; }
+        header .header-wrapper .login-wrapper .login-basket > img {
+          width: 40px;
+          height: 40px;
+          margin-left: 10px; }
+  header .basket-items {
+    width: 500px;
+    position: absolute;
+    background-color: #f2f2f2;
+    right: 0px;
+    z-index: 1; }
 
 nav {
   background: rgba(52, 73, 94, 0.8); }
@@ -47,18 +56,146 @@ nav {
       nav .Panel-wrapper .panel-search input {
         width: 135px;
         height: 27px;
-        background-image: url(/dist/img/search.svg); }
+        background-image: url(/dist/img/search.svg);
+        background-repeat: no-repeat;
+        background-position: left;
+        padding-left: 20px; }
+
+.Content {
+  background-color: #E5E5E5; }
+
+.content-wrapper {
+  padding-top: 55px;
+  display: flex;
+  justify-content: space-between; }
+
+.item-wrapper {
+  margin-left: 10px;
+  width: calc(100% - 250px);
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  min-height: 93vh; }
+  .item-wrapper::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; }
+  .item-wrapper {
+    -ms-overflow-style: none;
+    /* IE 10+ */
+    scrollbar-width: none;
+    /* Firefox */ }
+
+.item {
+  padding: 15px;
+  position: relative;
+  width: 250px;
+  background-color: #FFFFFF;
+  border: 1px solid rgba(52, 73, 94, 0.15); }
+  .item .image img {
+    display: block;
+    max-width: 100%;
+    margin: 0 auto; }
+  .item .show-info {
+    position: absolute;
+    z-index: 1;
+    border: 1px solid grey;
+    display: flex;
+    width: 800px;
+    background-color: #FFFFFF; }
+    .item .show-info .tytle {
+      font-weight: bold;
+      font-size: 18px; }
+    .item .show-info .show-info-wrapper {
+      display: flex; }
+    .item .show-info .show-info-added {
+      flex-grow: 1; }
+    .item .show-info .option {
+      display: flex;
+      justify-content: space-between;
+      font-size: 20px; }
+    .item .show-info .show-info-price {
+      display: flex;
+      justify-content: space-between;
+      align-items: center; }
+      .item .show-info .show-info-price .price {
+        color: #34495E;
+        font-size: 24px;
+        font-weight: bold; }
+    .item .show-info .basket > button {
+      outline: none;
+      padding: 10px 17px;
+      background-color: #F05A28;
+      font-size: 18px;
+      border: 1px solid #F05A28;
+      color: white; }
+  .item .title-name {
+    color: #34495E;
+    margin-top: 15px;
+    font-weight: 600;
+    font-size: 14px; }
+  .item .price {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+    border-bottom: 1px solid rgba(133, 150, 166, 0.2);
+    padding-bottom: 10px;
+    align-items: flex-end; }
+  .item .price-number {
+    color: #34495E;
+    font-size: 24px;
+    font-weight: bold; }
+  .item .icon {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px; }
+    .item .icon img {
+      margin-left: 7px; }
+    .item .icon .icon-basket img {
+      width: 37px; }
+
+.Filter {
+  width: 250px; }
+  .Filter .filt-title {
+    background-color: #D4D7DB;
+    padding-left: 10px;
+    font-weight: bold;
+    padding: 5px 8px; }
+  .Filter .filt-section .section {
+    background-color: #FFFFFF;
+    padding: 5px 9px;
+    display: flex;
+    align-items: center; }
+    .Filter .filt-section .section:hover {
+      cursor: pointer; }
+  .Filter .filt-section .section-checked {
+    width: 10px;
+    height: 10px;
+    border: 1px solid grey; }
+  .Filter .filt-section .section-title {
+    margin-left: 10px; }
+  .Filter .Filt-block {
+    margin-top: 12px; }
+  .Filter .check {
+    background-color: #5050e6; }
+
+@font-face {
+  font-family: opensans;
+  /* Имя шрифта */
+  src: url(/font/opensanslight.ttf); }
 
 body {
   margin: 0;
   padding: 0;
-  font-size: 14px; }
+  font-size: 14px;
+  font-family: opensans;
+  background-color: #E5E5E5; }
 
 * {
   box-sizing: border-box; }
 
 .container {
-  max-width: 1300px;
+  max-width: 1920px;
   width: 100%;
   margin: 0 auto;
   padding: 0 40px; }
