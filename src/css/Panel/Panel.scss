@@ -1,10 +1,13 @@
 nav{
   background: rgba(52, 73, 94, 0.8);
+  min-height: 35px;
+  position: relative;
   .Panel-wrapper{
     display: flex;
     align-items: center;
     .panel-filter{
       display: flex;
+      align-items: center;
       &-item{
         color:$white;
         text-transform: uppercase;
@@ -12,6 +15,10 @@ nav{
         padding:7px 15px;
         &:hover{
           background-color: #34495E;
+        }
+        @include tablet{
+          font-size: 14px;
+          padding:7px 5px;
         }
       }
     }
@@ -22,9 +29,35 @@ nav{
         height: 27px;
         background-image: url(/dist/img/search.svg);
         background-repeat: no-repeat;
-        background-position: left;
-        padding-left:20px;
+        background-position: 4px;
+        padding-left: 24px;
       }
+    }
+  }
+}
+
+@include mobile{
+  .Panel-wrapper {
+    position: absolute;
+    height: 0;
+    flex-direction: column;
+    text-align: center;
+    left: 0;
+    top: 100%;
+    width: 100%;
+    color: black;
+    background: white;
+    overflow: hidden;
+    z-index: 2;
+    .panel-filter-item{
+      color: black !important;
+    }
+    .panel-filter{
+      display: block !important;
+    }
+    .panel-search{
+      margin-top: 10px;
+      margin-left:0 !important;
     }
   }
 }

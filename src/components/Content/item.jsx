@@ -21,6 +21,11 @@ class Item extends React.Component{
         let image = img.split(';');
         return image[0];
     }
+    SpacePrice(x){
+        var parts = x.toString().split(".");
+        parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, "  ");
+        return parts.join(".");
+    }
     render(){
 
         return (
@@ -38,7 +43,7 @@ class Item extends React.Component{
                             Цена:
                         </div>
                         <div className="price-number">
-                            {this.props.item.price1}
+                            {this.SpacePrice(this.props.item.price1)}
                         </div>
                     </div>
                     <div className="icon">

@@ -7,7 +7,7 @@ let App = (props)=>{
    return(
        <div>
          <Header basket = {props.store.basket} dispatch = {props.dispatch} items ={props.store.items} />
-         <Panel dispatch = {props.dispatch}/>
+         <Panel menu = {props.store.menu} dispatch = {props.dispatch}/>
          <Content store = {props.store} dispatch = {props.dispatch}/>
        </div>
    )
