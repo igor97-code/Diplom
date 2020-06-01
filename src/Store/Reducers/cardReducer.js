@@ -2,7 +2,7 @@ import data from "../BaseData.js";
 
 
 
-function CardReducer(state = data,action){
+function CardReducer(state = items,action){
     let copeobj = JSON.parse(JSON.stringify(state));
     if(action.type == 'openitem'){
         for(let i = 0; i <copeobj.length; i++){

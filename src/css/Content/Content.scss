@@ -7,6 +7,9 @@
   justify-content: space-between;
 }
 .item-wrapper{
+  @include mobile{
+    width:100%;
+  }
   margin-left:10px;
   width:calc(100% - 250px);
   display: flex;
@@ -56,6 +59,13 @@
     border:1px solid grey;
     width: 800px;
     background-color: $white;
+    @include tablet{
+      width:600px;
+    }
+    @include mobile{
+      width:100%;
+      left:0;
+    }
     .tytle{
       font-weight:bold;
       font-size:18px;
@@ -71,11 +81,25 @@
     }
     .show-info-added{
       flex-grow: 1;
+      padding: 10px;
+    }
+    .basket{
+      margin-top: 16px;
     }
     .option{
       display: flex;
       justify-content: space-between;
       font-size: 20px;
+    }
+    .show-info-img{
+      @include tablet{
+        width:200px;
+      }
+      >img{
+        @include tablet{
+          width:100%;
+        }
+      }
     }
     .show-info-price{
       display: flex;
@@ -88,6 +112,9 @@
       }
     }
     .basket > button{
+      @include tablet{
+        font-size: 16px;
+      }
       outline: none;
       padding: 10px 17px;
       background-color: #F05A28;
@@ -130,6 +157,9 @@
 }
 
 .Filter{
+  @include mobile{
+    display: none;
+  }
   width:250px;
   .filt-title{
     background-color: $titlefilter;

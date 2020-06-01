@@ -63,7 +63,7 @@ let FullCard = (props)=>{
                     </div>
                 </div>
                 <div className="option-wrapper">
-                  {/*  {getoptions(props.item)}*/}
+                    {getoptions(props.item)}
                 </div>
                 <div className="basket">
                     <button className="basket-button" dataid = {props.item.object_id} onClick = {addbasket}>Добавить в корзину</button>
