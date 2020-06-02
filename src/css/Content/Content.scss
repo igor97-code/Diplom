@@ -5,10 +5,14 @@
   padding-top:55px;
   display: flex;
   justify-content: space-between;
+  @include mobile{
+    padding-top:10px;
+  }
 }
 .item-wrapper{
   @include mobile{
     width:100%;
+    margin-left:0;
   }
   margin-left:10px;
   width:calc(100% - 250px);
@@ -63,8 +67,8 @@
       width:600px;
     }
     @include mobile{
-      width:100%;
-      left:0;
+      width:95%;
+      left:2.5%;
     }
     .tytle{
       font-weight:bold;
@@ -90,6 +94,9 @@
       display: flex;
       justify-content: space-between;
       font-size: 20px;
+      @include min-mobile{
+       font-size:16px;
+      }
     }
     .show-info-img{
       @include tablet{
